@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Juego: Adivina el Número</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .game-container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 300px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    input[type="number"] {
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .message {
+      margin-top: 15px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="game-container">
+    <h2>Adivina el número (1-100)</h2>
+    <input type="number" id="guess" placeholder="Ingresa tu número" min="1" max="100" />
+    <button onclick="checkGuess()">Adivinar</button>
+    <p class="message" id="message"></p>
+  </div>
+
+  <script>
+    const secretNumber = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+
+    function checkGuess() {
+      const guess = parseInt(document.getElementById('guess').value);
+      const message = document.getElementById('message');
+      attempts++;
+
+      if (isNaN(guess) || guess < 1 || guess > 100) {
+        message.textContent = "Por favor, ingresa un número válido entre 1 y 100.";
+        return;
+      }
+
+      if (guess < secretNumber) {
+        message.textContent = "Demasiado bajo. Intenta de nuevo.";
+      } else if (guess > secretNumber) {
+        message.textContent = "Demasiado alto. Intenta de nuevo.";
+      } else {
+        message.textContent = `¡Correcto! El número era ${secretNumber}. Lo lograste en ${attempts} intentos.`;
+      }
+    }
+  </script>
+
+</body>
+</html>

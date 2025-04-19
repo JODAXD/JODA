@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Google Clone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fff;
+    }
+    header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 15px 30px;
+    }
+    header a {
+      margin-left: 20px;
+      color: #000;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .logo {
+      margin-top: 120px;
+    }
+    .logo img {
+      width: 270px;
+    }
+    .search-container {
+      margin-top: 20px;
+    }
+    .search-box {
+      width: 60%;
+      max-width: 600px;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: 1px solid #dcdcdc;
+      border-radius: 24px;
+      outline: none;
+    }
+    .buttons {
+      margin-top: 30px;
+    }
+    .buttons input {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      background-color: #f8f9fa;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .buttons input:hover {
+      background-color: #e8e8e8;
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f2f2f2;
+      font-size: 14px;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#">Gmail</a>
+    <a href="#">Imágenes</a>
+  </header>
+
+  <div class="logo">
+    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google Logo">
+  </div>
+
+  <div class="search-container">
+    <input type="text" class="search-box" placeholder="Buscar en Google...">
+    <div class="buttons">
+      <input type="button" value="Buscar con Google">
+      <input type="button" value="Voy a tener suerte">
+    </div>
+  </div>
+
+  <footer>
+    Google Clone – Hecho con ❤️ en HTML y CSS
+  </footer>
+
+</body>
+</html>
